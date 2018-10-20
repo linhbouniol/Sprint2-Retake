@@ -12,6 +12,7 @@
 		39AAA289217B8945004AC4AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39AAA287217B8945004AC4AC /* Main.storyboard */; };
 		39AAA28B217B8946004AC4AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39AAA28A217B8946004AC4AC /* Assets.xcassets */; };
 		39AAA28E217B8946004AC4AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39AAA28C217B8946004AC4AC /* LaunchScreen.storyboard */; };
+		39AAA29B217B8A9D004AC4AC /* ShoppingItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA299217B8A9D004AC4AC /* ShoppingItem.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		39AAA28A217B8946004AC4AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39AAA28D217B8946004AC4AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39AAA28F217B8946004AC4AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39AAA29A217B8A9D004AC4AC /* ShoppingItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingItem.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,55 @@
 		39AAA282217B8945004AC4AC /* Sprint2-Retake */ = {
 			isa = PBXGroup;
 			children = (
-				39AAA283217B8945004AC4AC /* AppDelegate.swift */,
-				39AAA285217B8945004AC4AC /* ViewController.swift */,
-				39AAA287217B8945004AC4AC /* Main.storyboard */,
-				39AAA28A217B8946004AC4AC /* Assets.xcassets */,
-				39AAA28C217B8946004AC4AC /* LaunchScreen.storyboard */,
-				39AAA28F217B8946004AC4AC /* Info.plist */,
+				39AAA295217B8A2C004AC4AC /* App Lifecycle */,
+				39AAA29C217B8AA0004AC4AC /* Model */,
+				39AAA296217B8A41004AC4AC /* View Controllers */,
+				39AAA297217B8A52004AC4AC /* Storyboards */,
+				39AAA298217B8A5B004AC4AC /* Resources */,
 			);
 			path = "Sprint2-Retake";
+			sourceTree = "<group>";
+		};
+		39AAA295217B8A2C004AC4AC /* App Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				39AAA283217B8945004AC4AC /* AppDelegate.swift */,
+			);
+			path = "App Lifecycle";
+			sourceTree = "<group>";
+		};
+		39AAA296217B8A41004AC4AC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				39AAA285217B8945004AC4AC /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		39AAA297217B8A52004AC4AC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				39AAA287217B8945004AC4AC /* Main.storyboard */,
+				39AAA28C217B8946004AC4AC /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		39AAA298217B8A5B004AC4AC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				39AAA28A217B8946004AC4AC /* Assets.xcassets */,
+				39AAA28F217B8946004AC4AC /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		39AAA29C217B8AA0004AC4AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				39AAA299217B8A9D004AC4AC /* ShoppingItem.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39AAA29B217B8A9D004AC4AC /* ShoppingItem.xcdatamodeld in Sources */,
 				39AAA286217B8945004AC4AC /* ViewController.swift in Sources */,
 				39AAA284217B8945004AC4AC /* AppDelegate.swift in Sources */,
 			);
@@ -284,7 +328,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39ZVY2XGME;
-				INFOPLIST_FILE = "Sprint2-Retake/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint2-Retake/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39ZVY2XGME;
-				INFOPLIST_FILE = "Sprint2-Retake/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint2-Retake/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,6 +380,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		39AAA299217B8A9D004AC4AC /* ShoppingItem.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				39AAA29A217B8A9D004AC4AC /* ShoppingItem.xcdatamodel */,
+			);
+			currentVersion = 39AAA29A217B8A9D004AC4AC /* ShoppingItem.xcdatamodel */;
+			path = ShoppingItem.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 39AAA278217B8945004AC4AC /* Project object */;
 }
