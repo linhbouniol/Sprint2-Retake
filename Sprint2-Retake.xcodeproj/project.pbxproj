@@ -18,6 +18,7 @@
 		39AAA2A5217B945F004AC4AC /* ShoppingListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA2A4217B945F004AC4AC /* ShoppingListCollectionViewController.swift */; };
 		39AAA2A7217B94FF004AC4AC /* ShoppingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA2A6217B94FF004AC4AC /* ShoppingDetailViewController.swift */; };
 		39AAA2A9217B9580004AC4AC /* ShoppingItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA2A8217B9580004AC4AC /* ShoppingItemCollectionViewCell.swift */; };
+		39AAA2AC217BA336004AC4AC /* ShoppingItemCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA2AB217BA336004AC4AC /* ShoppingItemCollectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		39AAA2A4217B945F004AC4AC /* ShoppingListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListCollectionViewController.swift; sourceTree = "<group>"; };
 		39AAA2A6217B94FF004AC4AC /* ShoppingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingDetailViewController.swift; sourceTree = "<group>"; };
 		39AAA2A8217B9580004AC4AC /* ShoppingItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		39AAA2AB217BA336004AC4AC /* ShoppingItemCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCollectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				39AAA2A8217B9580004AC4AC /* ShoppingItemCollectionViewCell.swift */,
+				39AAA2AB217BA336004AC4AC /* ShoppingItemCollectionHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39AAA2AC217BA336004AC4AC /* ShoppingItemCollectionHeaderView.swift in Sources */,
 				39AAA2A0217B8B9C004AC4AC /* CoreDataStack.swift in Sources */,
 				39AAA29E217B8B8E004AC4AC /* ShoppingItem+Convenience.swift in Sources */,
 				39AAA29B217B8A9D004AC4AC /* ShoppingItem.xcdatamodeld in Sources */,

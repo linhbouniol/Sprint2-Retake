@@ -18,12 +18,4 @@ extension ShoppingItem {
         self.image = image
         self.isAdded = isAdded
     }
-    
-    var isAddedString: String { // use with NSFetchResultController to sort items into sections
-        if isAdded {
-            return "Added"
-        } else {
-            return "Not Added"
-        }
-    }
 }

@@ -7,54 +7,94 @@
 //
 
 import UIKit
+import CoreData
 
-private let reuseIdentifier = "Cell"
-
-class ShoppingListCollectionViewController: UICollectionViewController {
+class ShoppingListCollectionViewController: UICollectionViewController, NSFetchedResultsControllerDelegate {
+    
+    var shoppingItemController = ShoppingItemController()
+    
+    lazy var fetchedResultsController: NSFetchedResultsController<ShoppingItem> = {
+        let fetchRequest: NSFetchRequest<ShoppingItem> = ShoppingItem.fetchRequest()
+        
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "isAdded", ascending: true),
+                                        NSSortDescriptor(key: "name", ascending: true)]
+        
+        let moc = CoreDataStack.shared.mainContext
+        
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                             managedObjectContext: moc,
+                                             sectionNameKeyPath: "isAdded",
+                                             cacheName: nil)
+       
+        frc.delegate = self
+        
+        do {
+            try frc.performFetch()
+        } catch {
+            NSLog("Error fetching: \(error)")
+        }
+        return frc
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
-
+    
+    // MARK: - NSFetchedResultsControllerDelegate
+    
+    // three other methods are optional
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        // just reload after all changes are made
+        collectionView.reloadData()
+    }
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return fetchedResultsController.sections?.count ?? 1
     }
 
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath) as! ShoppingItemCollectionHeaderView
+        
+        if indexPath.section == 0 {
+            headerView.headerLabel.text = "Added Items"
+        } else {
+            headerView.headerLabel.text = "Not Added Items"
+        }
+        return headerView
+    }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShoppingItemCell", for: indexPath) as! ShoppingItemCollectionViewCell
     
-        // Configure the cell
+        cell.shoppingItem = fetchedResultsController.object(at: indexPath)
     
         return cell
     }
 
     // MARK: UICollectionViewDelegate
     
-//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let indexPath = indexPath.item
+        
+        let shoppingItem = fetchedResultsController.object(at: indexPath)
+        
+        shoppingItemController.updateIsAdded(for: shoppingItem)
+        
+    }
     
      // MARK: - Navigation
     
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
+        if let detailVC = segue.destination as? ShoppingDetailViewController {
+            detailVC.shoppingItemController = shoppingItemController
+        }
      }
 }

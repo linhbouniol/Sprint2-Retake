@@ -10,6 +10,8 @@ import UIKit
 
 class ShoppingDetailViewController: UIViewController {
     
+    var shoppingItemController: ShoppingItemController?
+    
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
