@@ -32,4 +32,6 @@ class ShoppingItemCollectionViewCell: UICollectionViewCell {
             addedNotAddedLabel.text = "Not Added"
         }
     }
+    
+    
 }

@@ -37,7 +37,23 @@ class ShoppingListCollectionViewController: UICollectionViewController, NSFetche
     }()
     
     
-    
+    @IBAction func addShoppingItem(_ sender: Any) {
+        let alert = UIAlertController(title: "Add Shopping Item", message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Shopping Item Name"
+        }
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (_) in
+            guard let name = alert.textFields?.first?.text else { return }
+            
+            self.shoppingItemController.createShoppingItem(withName: name, image: "")
+        }))
+        
+        present(alert, animated: true, completion: nil)
+    }
     
 
     override func viewDidLoad() {
