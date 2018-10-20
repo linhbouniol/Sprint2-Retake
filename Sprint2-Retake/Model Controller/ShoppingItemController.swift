@@ -7,10 +7,9 @@
 //
 
 import Foundation
+import CoreData
 
 class ShoppingItemController {
-    
-    var shoppingItems: [ShoppingItem] = []
     
     init() {
         if !UserDefaults.standard.bool(forKey: "LaunchedBefore") { // if true, create items
@@ -27,9 +26,7 @@ class ShoppingItemController {
     }
     
     func createShoppingItem(withName name: String, image: String, isAdded: Bool = false) {
-        let shoppingItem = ShoppingItem(name: name, image: image, isAdded: isAdded)
-        
-        shoppingItems.append(shoppingItem)
+        let _ = ShoppingItem(name: name, image: image, isAdded: isAdded)
         
         do {
             try CoreDataStack.shared.save()
@@ -46,6 +43,21 @@ class ShoppingItemController {
             try CoreDataStack.shared.save()
         } catch {
             NSLog("Error saving to core data: \(error)")
+        }
+    }
+    
+    // fetch the added items from core data
+    var shoppingList: [ShoppingItem] {
+        let fetchRequest: NSFetchRequest<ShoppingItem> = ShoppingItem.fetchRequest()
+        let moc = CoreDataStack.shared.mainContext
+        
+        fetchRequest.predicate = NSPredicate(format: "isAdded == true")
+        
+        do {
+            return try moc.fetch(fetchRequest)
+        } catch {
+            NSLog("Error fetching shopping list: \(error)")
+            return []
         }
     }
 }

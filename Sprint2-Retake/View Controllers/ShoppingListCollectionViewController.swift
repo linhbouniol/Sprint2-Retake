@@ -35,6 +35,10 @@ class ShoppingListCollectionViewController: UICollectionViewController, NSFetche
         }
         return frc
     }()
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,9 +64,9 @@ class ShoppingListCollectionViewController: UICollectionViewController, NSFetche
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath) as! ShoppingItemCollectionHeaderView
         
         if indexPath.section == 0 {
-            headerView.headerLabel.text = "Added Items"
-        } else {
             headerView.headerLabel.text = "Not Added Items"
+        } else {
+            headerView.headerLabel.text = "Added Items"
         }
         return headerView
     }
@@ -95,6 +99,7 @@ class ShoppingListCollectionViewController: UICollectionViewController, NSFetche
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailVC = segue.destination as? ShoppingDetailViewController {
             detailVC.shoppingItemController = shoppingItemController
+            detailVC.numberOfShoppingItems = shoppingItemController.shoppingList.count
         }
      }
 }

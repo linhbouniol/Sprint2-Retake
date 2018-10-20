@@ -91,6 +91,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Shopping List" id="YXM-dy-n8W">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="emP-Xi-4Kz"/>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="wSN-qW-eNA">
                             <connections>
                                 <segue destination="mF4-Pd-U8e" kind="show" identifier="ShowShopping" id="IIg-WE-YDr"/>

@@ -33,7 +33,7 @@ class LocalNotificationHelper {
         }
     }
     
-    func scheduleDailyReminderNotification(name: String, address: String) {
+    func sendOrderNotification(name: String, address: String) {
         let content = UNMutableNotificationContent()
         content.title = "Delivery For \(name)!"
         content.body = "Your shopping item(s) will be delivered to \(address) in 15 minutes."
