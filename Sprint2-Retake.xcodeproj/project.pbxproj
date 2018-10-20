@@ -19,6 +19,7 @@
 		39AAA2A7217B94FF004AC4AC /* ShoppingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA2A6217B94FF004AC4AC /* ShoppingDetailViewController.swift */; };
 		39AAA2A9217B9580004AC4AC /* ShoppingItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA2A8217B9580004AC4AC /* ShoppingItemCollectionViewCell.swift */; };
 		39AAA2AC217BA336004AC4AC /* ShoppingItemCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA2AB217BA336004AC4AC /* ShoppingItemCollectionHeaderView.swift */; };
+		39AAA2AE217BA5C5004AC4AC /* LocalNotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA2AD217BA5C5004AC4AC /* LocalNotificationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		39AAA2A6217B94FF004AC4AC /* ShoppingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingDetailViewController.swift; sourceTree = "<group>"; };
 		39AAA2A8217B9580004AC4AC /* ShoppingItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		39AAA2AB217BA336004AC4AC /* ShoppingItemCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCollectionHeaderView.swift; sourceTree = "<group>"; };
+		39AAA2AD217BA5C5004AC4AC /* LocalNotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				39AAA2A3217B8D8B004AC4AC /* Model Controller */,
 				39AAA2AA217B95A9004AC4AC /* Views */,
 				39AAA296217B8A41004AC4AC /* View Controllers */,
+				39AAA2AF217BA5C8004AC4AC /* Helpers */,
 				39AAA297217B8A52004AC4AC /* Storyboards */,
 				39AAA298217B8A5B004AC4AC /* Resources */,
 			);
@@ -139,6 +142,14 @@
 				39AAA2AB217BA336004AC4AC /* ShoppingItemCollectionHeaderView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		39AAA2AF217BA5C8004AC4AC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				39AAA2AD217BA5C5004AC4AC /* LocalNotificationHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +227,7 @@
 				39AAA2A0217B8B9C004AC4AC /* CoreDataStack.swift in Sources */,
 				39AAA29E217B8B8E004AC4AC /* ShoppingItem+Convenience.swift in Sources */,
 				39AAA29B217B8A9D004AC4AC /* ShoppingItem.xcdatamodeld in Sources */,
+				39AAA2AE217BA5C5004AC4AC /* LocalNotificationHelper.swift in Sources */,
 				39AAA2A2217B8D87004AC4AC /* ShoppingItemController.swift in Sources */,
 				39AAA2A5217B945F004AC4AC /* ShoppingListCollectionViewController.swift in Sources */,
 				39AAA2A9217B9580004AC4AC /* ShoppingItemCollectionViewCell.swift in Sources */,
