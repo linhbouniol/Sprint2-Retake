@@ -13,6 +13,9 @@
 		39AAA28B217B8946004AC4AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39AAA28A217B8946004AC4AC /* Assets.xcassets */; };
 		39AAA28E217B8946004AC4AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39AAA28C217B8946004AC4AC /* LaunchScreen.storyboard */; };
 		39AAA29B217B8A9D004AC4AC /* ShoppingItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA299217B8A9D004AC4AC /* ShoppingItem.xcdatamodeld */; };
+		39AAA29E217B8B8E004AC4AC /* ShoppingItem+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA29D217B8B8E004AC4AC /* ShoppingItem+Convenience.swift */; };
+		39AAA2A0217B8B9C004AC4AC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA29F217B8B9C004AC4AC /* CoreDataStack.swift */; };
+		39AAA2A2217B8D87004AC4AC /* ShoppingItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA2A1217B8D87004AC4AC /* ShoppingItemController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		39AAA28D217B8946004AC4AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39AAA28F217B8946004AC4AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39AAA29A217B8A9D004AC4AC /* ShoppingItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingItem.xcdatamodel; sourceTree = "<group>"; };
+		39AAA29D217B8B8E004AC4AC /* ShoppingItem+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShoppingItem+Convenience.swift"; sourceTree = "<group>"; };
+		39AAA29F217B8B9C004AC4AC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		39AAA2A1217B8D87004AC4AC /* ShoppingItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			children = (
 				39AAA295217B8A2C004AC4AC /* App Lifecycle */,
 				39AAA29C217B8AA0004AC4AC /* Model */,
+				39AAA2A3217B8D8B004AC4AC /* Model Controller */,
 				39AAA296217B8A41004AC4AC /* View Controllers */,
 				39AAA297217B8A52004AC4AC /* Storyboards */,
 				39AAA298217B8A5B004AC4AC /* Resources */,
@@ -103,8 +110,18 @@
 			isa = PBXGroup;
 			children = (
 				39AAA299217B8A9D004AC4AC /* ShoppingItem.xcdatamodeld */,
+				39AAA29D217B8B8E004AC4AC /* ShoppingItem+Convenience.swift */,
+				39AAA29F217B8B9C004AC4AC /* CoreDataStack.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		39AAA2A3217B8D8B004AC4AC /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				39AAA2A1217B8D87004AC4AC /* ShoppingItemController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,8 +195,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39AAA2A0217B8B9C004AC4AC /* CoreDataStack.swift in Sources */,
+				39AAA29E217B8B8E004AC4AC /* ShoppingItem+Convenience.swift in Sources */,
 				39AAA29B217B8A9D004AC4AC /* ShoppingItem.xcdatamodeld in Sources */,
 				39AAA286217B8945004AC4AC /* ViewController.swift in Sources */,
+				39AAA2A2217B8D87004AC4AC /* ShoppingItemController.swift in Sources */,
 				39AAA284217B8945004AC4AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
